@@ -1,2 +1,2 @@
 # spaghetti
-demo on usig github
+demo on using github
