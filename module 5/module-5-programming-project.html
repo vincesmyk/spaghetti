@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CMPS 162: Module 5 Programming Project</title>
+<style>* { font-family: monospace; }</style>
+<script>
+
+//--------//
+// Events //
+//--------//
+console.log("Events");
+
+// 1. Change the link (the <a> tag) in the HTML body below such that a hello
+//    message is displayed on a click event.
+
+
+
+//--------------//
+// Input Fields //
+//--------------//
+console.log("Input Fields");
+
+// 1. Change the background color to red for the input text field (the <input>
+//    tag) in the HTML body when obtaining the focus and change it back to
+//    white when the focus is lost.
+
+// 2. Read the content of the input field (the <input> tag) when the focus is
+//    lost and alert it to the user.
+function blurred(){
+  document.getElementById("id").style.backgroundColor="white";
+  alert("off focus");
+}
+
+//------------//
+// Paragraphs //
+//------------//
+console.log("Paragraphs");
+
+// 1. Write JavaScript code that changes the text in the paragraph below
+//    (the <p> tag) from "Hello World!" to "Goodbye World!".
+function changeText(){
+      var element = document.getElementById("p1");
+      element.innerHTML = "Goodbye World!";
+}
+//could only do this through OnClick and giving p tag an id
+//--------//
+// Images //
+//--------//
+console.log("Images");
+
+// 1. Add an image to the HTML body (use the <img> tag). Make it disappear when
+//    someone clicks on it.x
+
+
+
+//--------//
+// Styles //
+//--------//
+console.log("Styles");
+
+// 1. Use the style of div1 and div2 to swap the colors of the divs.x
+
+function swapColors() {
+  var backgroundColor1 = document.getElementById("div1").style.backgroundColor;
+  var backgroundColor2 = document.getElementById("div2").style.backgroundColor;
+  document.getElementById("div1").style.backgroundColor=backgroundColor2;
+  document.getElementById("div2").style.backgroundColor=backgroundColor1;
+}
+
+
+</script>
+</head>
+<body>
+  See console!<br><br>
+  <a onClick="alert('Hello');">Click here for a greeting!</a><br><br>
+  <input type="text" id="id"
+  onFocus="style.backgroundColor='red';"
+  onBlur="blurred();"
+  ><br><br>
+  <p id="p1" onClick="changeText();">Hello World!</p>
+  <div id="div1"
+       style="background-color:yellow;"
+       onClick="swapColors();"
+       >
+    Hello
+  </div>
+  <div id="div2"
+       style="background-color:green;"
+       onClick="swapColors();">
+    World
+  </div>
+  <img img src="dog.png" onClick="style.visibility='hidden';"></img>
+</body>
+</html>
