@@ -1,0 +1,109 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CMPS 162: Module 7 Programming Project</title>
+<style>* { font-family: monospace; }</style>
+<script>
+
+//-----------------//
+// Browser Version //
+//-----------------//
+console.log("Browser Version");
+
+// 1. Complete the implementation and show the current verstion of your browser
+
+/* I accidentally showed current webpage not browser in code below
+var currentVersion = window.location.href; */
+
+var currentVersion = navigator.userAgent; // Had to look this one up
+console.log(currentVersion);
+// 2. Paste the output that you receive from the first question
+//Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36
+
+//-----------------//
+// Windows //
+//-----------------//
+console.log("Windows");
+
+// 1. Create a way to open a window with the height & width of 500 each
+var win = window.open("","","width=500,height=500")
+// 2. Create a way to close a window
+
+//TypeError due to win not actually having a button to open it
+
+// for some reason this works in liveserver but doesnt allow me to see the debug console in visual studio so I commented it out
+
+//win.close(); 
+
+
+// 3. Create a button to open a new window with preferences of a toolbar, location is true, no directories, no status
+//.   menubar, scrollbars, not resizable, height/width is 400
+
+//See button at bottom of page
+//-----------------//
+// History URLS //
+//-----------------//
+console.log("History");
+  
+// 1. Create a function that provides a way to obtain the history of pages visited previously
+function findPrevPage(){
+  var previous = document.refferer;
+  return previous;
+}
+//I couldn't figure out how to access the URL of the pages visited previously since both history.back and history.go made the user leave the page
+
+// 2. Run in Live Server and copy the URL, and then visit www.yahoo.com, www.jeffreyjseaman.com, www.pkwinery.com, www.libertypolespirits.com, www.espn.com
+// Provide how many URLs you have in your history
+console.log(window.history.length);
+
+  //-----------------//
+// Cookies //
+//-----------------//
+console.log("Cookies");
+
+// 1. Create a way to identify if cookies are enabled
+function checkCookie(){
+    var user=getCookie("username");
+    if(user!=""){
+      alert("Welcome again " + user);
+    }else{
+      user=prompt("enter name:","");
+      if(user!=""&&user!=null){
+        setCookie("username",user,30);
+      }
+    }
+  }
+// 2. Create a way to set the cookie
+function setCookie(cname,cvalue,exdays){
+  const d = new Date();
+  d.setDate(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = cname+"="+cvalue+";"+expires+";path/";
+}
+// 3. Create a way to obtain the cookie and display it on the screen
+function getCookie(cname){
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(";");
+  for(var i = 0;i<ca.length;i++){
+    var c = ca[i];
+    while(c.charAt(0)== ""){
+    c=c.substring(1);
+    }
+    if (c.indexOf(name)===0){
+    return c.substring(name.lenght, c.length);
+
+    }
+  } 
+  return "";
+}
+
+</script>
+</head>
+<body>
+  <input type="button" onClick="window.open('','','width=400,height=400');">open a window</input>
+  <h>See console!</h>
+</body>
+</html>
