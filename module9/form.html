@@ -1,0 +1,54 @@
+<html>
+    <title>Survey</title>
+    <head>
+        <script src="practice.js"></script>
+    </head>
+    <body>
+        <h1>Login</h1>
+        <form name="login" style>
+            <label for="username">Username</label>
+            <input id="username"minlength=8 name="username"required>
+            <label for="pword">Password</label>
+            <input id="pword"minlength=12 name="pword"required>
+            
+        </form>
+        <h1>Survey</h1>
+        <form name = "myForm" onsubmit="return validateForm()" method="post" action="https://google.com"required>
+            <div>
+                <label for="name1">First name?</label>
+                <input type="text" id="name1" name="name1" required> 
+                <br>
+                <label for="name2">Last name?</label>
+                <input type="text" id="name2" name="name2" required>
+                <br>
+                <label for="add1">Primary address?</label>
+                <input type="text" id="add1" name="add1" required> 
+                <br>
+                <label for="add2">Secondary address?</label>
+                <input type="text" id="add2" name="add2" required>
+                <br>
+                <label for="city">City?</label>
+                <input type="text" id="city" name="city" required>
+                <br>
+                <label for="state">State?</label>
+                <input type="text" id="state" name="state" maxlength="2" required>
+                <br>
+                <label for="zip">Zipcode?</label>
+                <input type="zip" id="zip" name="zip" maxlength="5" required>
+                <br>
+                <label for="coffee">What is your favorite Pittsburgh coffee place?</label>
+                <input type="coffee" id="coffee" name="coffee" >
+                <br>
+                <label for="lunch">What is your favorite Pittsburgh lunch spot?</label>
+                <input type="lunch" id="lunch" name="lunch" >
+                <br>
+                <label for="fav">What is your favorite city besides Pittsburgh?</label>
+                <input type="fav" id="fav" name="fav" >
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+        
+    </body>
+</html>
